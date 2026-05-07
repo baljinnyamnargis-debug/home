@@ -1,35 +1,34 @@
 import { Eye, MessageCircle } from "lucide-react";
 
-let Cards = ({ image, title, views, comments, category, time }) => {
+const Cards = ({ image, title, views, comments, category, time }) => {
   return (
-    <div>
+  
       <div 
       style={{backgroundImage: `url(${image})`}}
-      className="w-[280px] h-120 rounded-xl bg-[url('/images/5f8e470aa018b22b68a43253e4bd0c61.jpg')] bg-cover bg-center mt-130 flex flex-col justify-between p-5 font-bold">
+      className="w-[300px] h-[450px] rounded-xl  bg-cover bg-center flex flex-col justify-between p-5 font-bold shadow-2xl sharink-0 mt-[430px]">
         <div className="flex justify-between text-white">
-          <span class="blue-dot">.</span>
-          <span class="read">0 min</span>
+          <span className="text-blue-500 text-4xl leading-none">.</span>
+          <span className="bg-black/20 backdrop-blur-sm px-2 py-1 rounded-md text-sm">{time} min</span>
         </div>
-        <div className="flex flex-col gap-5 text-white text-size text-[24px]">
-          <div className="flex gap-10 text-[18px] ">
-            <span className="flex gap-1.5">
-              <Eye className="w-5 h-5" />
-              2000
+        <div className="flex flex-col gap-5 text-white text-size text-[px]">
+          <div className="flex gap-10 text-[] ">
+            <span className="flex items-center gap-1.5">
+              <Eye className="w-5 h-5"/> {views}
             </span>
-
-            <span className="flex gap-1.5">
-              <MessageCircle className="w-5 h-5" />0
+            <span className="flex items-center gap-1.5">
+              <MessageCircle className="w-5 h-5"/> {comments}
             </span>
           </div>
-          <h4 className="text-[20px]">
-            Unread туршив: Тоглоомын дүрмийг өөрчлөх 600 долларын үнэтэй MacBook
+          <h4 className="text-[20px leading-tight]">
+           {title}
           </h4>
-          <label className="bg-blue-500 p-2 rounded-2xl uppercase text-[12px] w-fit ">
-            Techworm
+          <label className="bg-blue-500 p-2 px-4 rounded-2xl uppercase text-[12px] w-fit ">
+            {category}
           </label>
         </div>
       </div>
-    </div>
+     
+
   );
 };
 export default Cards;
